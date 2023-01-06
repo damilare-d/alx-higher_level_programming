@@ -1,0 +1,29 @@
+The ``3-say_my_name`` module
+===============================
+
+Using ``say_my_name``
+------------------------
+
+This is a 3-say_my_name text file in reStructuredText format. First import
+``say_my_name`` from the ``3-say_my_name`` module:
+
+	>>> smn = __import__("3-say_my_name").say_my_name
+
+Now use it:
+
+	>>> smn("John", "Smith")
+	My name is John Smith
+	
+Testing none numbers:
+	
+	>>> smn(3, "Carpenter")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+	>>> smn("Daemon", 3)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> smn(None, None)
+	Traceback (most recent call last):
+        TypeError: first_name must be a string
