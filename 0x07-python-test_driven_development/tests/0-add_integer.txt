@@ -1,0 +1,47 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+This is a 0-add_integer text file in reStructuredText format. First import
+``add_integer`` from the ``0-add_integer`` module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+	>>> add_integer(2)
+	100
+
+This tests float values:
+
+	>>> add_integer(2.3, 8.1)
+	10
+	
+	>>> add_integer(2.5, 17.1)
+	19
+
+This tests other data types asides int and float:
+
+	>>> add_integer("56", 90)
+	Traceback (most recent call last):
+    	TypeError: a must be an integer
+
+	>>> add_integer(90, "b")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+	>>> add_integer('None', '90')
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+	>>> add_integer(True)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+This tests positional argument 'a':
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
