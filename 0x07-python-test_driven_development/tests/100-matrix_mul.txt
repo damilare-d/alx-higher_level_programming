@@ -1,0 +1,43 @@
+The ``100-matrix_mul`` module
+===============================
+
+Using ``matrix_mul``
+------------------------
+
+This is a 100-matrix_mul text file in reStructuredText format. First import
+``matrix_mul`` from the ``100-matrix_mul`` module:
+
+	>>> mm = __import__("100-matrix_mul").matrix_mul
+
+Now use it:
+
+	>>> mm("matrixa", [[3, 4], [9, 0]])
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+	
+	>>> mm([[1,2]], "matrix_b")
+	Traceback (most recent call last):
+	TypeError: m_b must be a list
+
+	>>> mm([[1, 2], [3, 4]], [[2, 4],[3, 8]])
+	[[8, 20], [18, 44]]
+
+	>>> mm([[]], [[2, 4], [3, 8]])
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+
+	>>> mm([[1, 2],[3, 4]], [])
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+
+	>>> mm([[1, 2], [3, 4]], [[1,2]])
+	Traceback (most recent call last):
+	ValueError: m_a and m_b can't be multiplied
+
+	>>> mm([[1,2], [1], [6, 7]], [[1, 2], [2, 3]])
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
+
+	>>> mm([["1", "2"]], [["1"], ["1"]])
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
