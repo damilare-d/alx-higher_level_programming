@@ -1,0 +1,35 @@
+The ``4-print_square`` module
+===============================
+
+Using ``print_square``
+------------------------
+
+This is a 4-print_square text file in reStructuredText format. First import
+``print_square`` from the ``4-print_square`` module:
+
+	>>> ps = __import__("4-print_square").print_square
+
+Now use it:
+
+	>>> ps(7)
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
+	
+Testing none numbers:
+	
+	>>> ps("Carpenter")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+	>>> ps(-9)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+	>>> ps(-0.5)
+	Traceback (most recent call last):
+        TypeError: size must be an integer
